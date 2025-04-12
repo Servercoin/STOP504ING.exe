@@ -1,4 +1,7 @@
 import requests
+from flask import app
+from flask import request
+from flask import Flask,jsonify
 def loop1():
  def t600thingactivate():
      data = {"Specialty":str(mysteriousdevice)}
@@ -148,6 +151,8 @@ def loop1():
          the600thing = 600
          break
          lol=True
-         
+@app.route("/hi",methods=['GET'])
+def hi():
+ return jsonify({"Success":"Hi!"}),200
 thread2 = threading.Thread(target=loop1)
 thread2.start()
